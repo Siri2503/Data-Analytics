@@ -1,0 +1,136 @@
+
+
+lst =[[1,2,3],
+[4,5,6],
+[7,8,9]]
+
+
+rows = len(lst)
+isSquare =True
+
+for i in range(len(lst)):
+    if len(lst[i]) != rows:
+        isSquare = False
+        break
+if isSquare:
+    print("Square matrix")
+else:
+    print("not square matrix")
+lst_even =[]       
+for i in range(len(lst)):
+    lst_ = []
+    for j in range(len(lst[i])):
+        if lst[i][j] %2==0:
+            lst_.append(lst[i][j])
+    lst_even.append(lst_)
+print(lst_even)
+
+
+
+lst = [[101,'siri','nellore',12345,'D-12'],
+      [101,'siri','nellore',12345,'D-12'],
+      [101,'siri','nellore',12345,'D-12'],
+      [101,'siri','nellore',12345,'D-12']]
+
+
+#for i in range(len(lst)):
+ #   s=0
+  #  for j in range(len(lst[i])):
+   #     s += lst[i][j]
+    #print(s)
+    
+    
+dct_name ={102:"sori",103:"sori",105:"sori"}
+dct_loc ={102:"nell",103:"nel",105:"nel"}
+
+print(dct_name[102],end=" ")
+print(dct_loc[102])
+
+
+
+
+# reverse a list
+
+lst =[1,2,3,4,5,]
+lst.reverse()
+print(lst)
+
+def reverse_list(lst):
+    return lst[::-1]
+             #OR
+lst =[1,2,3,4,5,]
+rev = reverse_list(lst)
+print(rev)
+
+# remove duplicates
+
+lst =[1,2,3,4,4,3,2,1,6,7,8,9,23]
+unique =[]
+for i in lst:
+    if i not in unique:
+        unique.append(i)
+print(unique)
+             #OR
+lst =[1,2,3,3,4,5,4,6,7,8,8,9]
+unique = list(set(lst))
+print(unique)
+
+
+#flattesnd the nested list and unique list
+
+def flatten_list(lst):
+    flat_list=[]
+    for i in lst:
+        if isinstance(i,list):
+            flat_list.extend(flatten_list(i))
+        else:
+            flat_list.append(i)
+    return flat_list
+lst =[1, [2, [3,[2,4,5,[5,6,7],6], 4], 5], 6]
+flat_list=flatten_list(lst)
+print(flat_list)
+unique =list(set(flat_list))
+print(unique)
+
+#intersection of two lists in Python
+def intersection(lst1,lst2):
+    return list(set(lst1)&set(lst2))
+
+lst1 =[1,2,3,4,5]
+lst2 =[2,3,5,6,7,8]
+com_no = intersection(lst1,lst2)
+print(com_no)
+                
+intersection = list(set(lst1)&set(lst2))
+print(intersection)
+
+
+for i in lst1:
+    if i in lst2 and i not in intersection:
+        intersection.append(i)
+print(intersection)
+
+#d/n in list
+a=[1,2,3,4,5]
+b=[5,6,7,8,9]
+difference_list=list(set(a)-set(b))
+print(difference_list)
+
+#rotate list
+def rotate_list(a,n):
+    return a[n:] + a[:n]
+
+a=[1,2,3,4,5]
+rotate = rotate_list(a,4)
+print(rotate)
+
+
+
+
+
+
+
+
+
+
+
